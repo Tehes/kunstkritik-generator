@@ -30,8 +30,9 @@ div {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    width: max-content;
     cursor: pointer;
+    width: max-content;
+    padding: 3%;
 }
 
 p {
