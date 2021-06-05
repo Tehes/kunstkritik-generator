@@ -2,17 +2,37 @@ var app = (function() {
     /* --------------------------------------------------------------------------------------------------
     Variables
     ---------------------------------------------------------------------------------------------------*/
-    var firstWord = ["Das Œuvre", "Das Substrat", "Die Rhythmisierung", "Der Pinselduktus", "Der Mythos", "Die Linearität", "Die Komposition", "Die Impression", "Die Idealisierung", "Der Gestus", "Der Farbauftrag", "Die Expression", "Die Atmosphäre", "Die Abstraktion", "Die Ästhetik"];
-    var secondWord = ["transzendiert", "collagiert", "illuminiert", "intendiert", "evoziert", "manifestiert", "moduliert", "reflektiert", "suggeriert", "thematisiert", "transformiert", "reproduziert", "verhandelt", "zitiert", "simuliert"];
-    var thirdWord = ["virtuell", "tautologisch", "informell", "surreal", "stringent", "seriell", "mimetisch", "narrativ", "hypothetisch", "haptisch", "fragmentarisch", "hermetisch", "figurativ", "experimentell", "assoziativ"];
-    var fourthWord = ["das Artifizielle", "das Auratische", "den Bildraum", "das Eingeschriebene", "das Erratische", "das Existentielle", "die Ikonographie", "das Motivische", "das Orgiastische", "die Materialität", "das Phantastische", "die Relativität", "das Selbstreflexive", "das Kosmische", "die Inszenierung"];
-
+    var words = [{
+            "list": ["Das Œuvre", "Das Substrat", "Die Rhythmisierung", "Der Pinselduktus", "Der Mythos", "Die Linearität", "Die Komposition", "Die Impression", "Die Idealisierung", "Der Gestus", "Der Farbauftrag", "Die Expression", "Die Atmosphäre", "Die Abstraktion", "Die Ästhetik"],
+            "index": function() {
+                return getRndInteger(0, this.list.length - 1);
+            },
+        },
+        {
+            "list": ["transzendiert", "collagiert", "illuminiert", "intendiert", "evoziert", "manifestiert", "moduliert", "reflektiert", "suggeriert", "thematisiert", "transformiert", "reproduziert", "verhandelt", "zitiert", "simuliert"],
+            "index": function() {
+                return getRndInteger(0, this.list.length - 1);
+            },
+        },
+        {
+            "list": ["virtuell", "tautologisch", "informell", "surreal", "stringent", "seriell", "mimetisch", "narrativ", "hypothetisch", "haptisch", "fragmentarisch", "hermetisch", "figurativ", "experimentell", "assoziativ"],
+            "index": function() {
+                return getRndInteger(0, this.list.length - 1);
+            },
+        },
+        {
+            "list": ["das Artifizielle", "das Auratische", "den Bildraum", "das Eingeschriebene", "das Erratische", "das Existentielle", "die Ikonographie", "das Motivische", "das Orgiastische", "die Materialität", "das Phantastische", "die Relativität", "das Selbstreflexive", "das Kosmische", "die Inszenierung"],
+            "index": function() {
+                return getRndInteger(0, this.list.length - 1);
+            },
+        },
+    ];
     /* --------------------------------------------------------------------------------------------------
     functions
     ---------------------------------------------------------------------------------------------------*/
     String.prototype.shuffle = function() {
-        var chars = this.split(""),
-            charsAmount = chars.length;
+        var chars = this.split("");
+        var charsAmount = chars.length;
 
         for (var i = charsAmount - 1; i > 0; i--) {
             var j = Math.floor(Math.random() * (i + 1));
@@ -32,24 +52,19 @@ var app = (function() {
         var counter = 1;
         var animation = setInterval(shuffleParas, 50);
 
-        var firstIndex = getRndInteger(0, firstWord.length-1);
-        var secondIndex = getRndInteger(0, secondWord.length-1);
-        var thirdIndex = getRndInteger(0, thirdWord.length-1);
-        var fourthIndex = getRndInteger(0, fourthWord.length-1);
-
         function shuffleParas() {
             if (counter >= 10) {
                 clearInterval(animation);
-                paragraphs[0].textContent = firstWord[firstIndex];
-                paragraphs[1].textContent = secondWord[secondIndex];
-                paragraphs[2].textContent = thirdWord[thirdIndex];
-                paragraphs[3].textContent = fourthWord[fourthIndex];
+                paragraphs[0].textContent = words[0].list[words[0].index()];
+                paragraphs[1].textContent = words[1].list[words[1].index()];
+                paragraphs[2].textContent = words[2].list[words[2].index()];
+                paragraphs[3].textContent = words[3].list[words[3].index()]; + ".";
             }
             else {
-                paragraphs[0].textContent = firstWord[firstIndex].shuffle();
-                paragraphs[1].textContent = secondWord[secondIndex].shuffle();
-                paragraphs[2].textContent = thirdWord[thirdIndex].shuffle();
-                paragraphs[3].textContent = fourthWord[fourthIndex].shuffle();
+                paragraphs[0].textContent = words[0].list[words[0].index()].shuffle();
+                paragraphs[1].textContent = words[1].list[words[1].index()].shuffle();
+                paragraphs[2].textContent = words[2].list[words[2].index()].shuffle();
+                paragraphs[3].textContent = words[3].list[words[3].index()].shuffle() + ".";
                 counter++;
             }
         }

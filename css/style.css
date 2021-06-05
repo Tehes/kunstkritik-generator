@@ -37,7 +37,7 @@ div {
 p {
     background-color: var(--generator-bg);
     color: var(--font-color);
-    font-size: 12vmin;
+    font-size: 10vmin;
     width: max-content;
     margin: 2%;
     padding: 1% 3%;
