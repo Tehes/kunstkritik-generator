@@ -51,20 +51,25 @@ var app = (function() {
         var paragraphs = document.querySelectorAll("p");
         var counter = 1;
         var animation = setInterval(shuffleParas, 50);
+        var index = [];
+        index[0] = words[0].index();
+        index[1] = words[1].index();
+        index[2] = words[2].index();
+        index[3] = words[3].index();
 
         function shuffleParas() {
             if (counter >= 10) {
                 clearInterval(animation);
-                paragraphs[0].textContent = words[0].list[words[0].index()];
-                paragraphs[1].textContent = words[1].list[words[1].index()];
-                paragraphs[2].textContent = words[2].list[words[2].index()];
-                paragraphs[3].textContent = words[3].list[words[3].index()]; + ".";
+                paragraphs[0].textContent = words[0].list[index[0]];
+                paragraphs[1].textContent = words[1].list[index[1]];
+                paragraphs[2].textContent = words[2].list[index[2]];
+                paragraphs[3].textContent = words[3].list[words[3].index()] + ".";
             }
             else {
-                paragraphs[0].textContent = words[0].list[words[0].index()].shuffle();
-                paragraphs[1].textContent = words[1].list[words[1].index()].shuffle();
-                paragraphs[2].textContent = words[2].list[words[2].index()].shuffle();
-                paragraphs[3].textContent = words[3].list[words[3].index()].shuffle() + ".";
+                paragraphs[0].textContent = words[0].list[index[0]].shuffle().trim();
+                paragraphs[1].textContent = words[1].list[index[1]].shuffle().trim();
+                paragraphs[2].textContent = words[2].list[index[2]].shuffle().trim();
+                paragraphs[3].textContent = words[3].list[index[3]].shuffle().trim() + ".";
                 counter++;
             }
         }
