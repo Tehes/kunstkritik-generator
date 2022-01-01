@@ -48,3 +48,13 @@ p {
 MEDIA QUERIES
 -------------------------------------------------------------------
 */
+
+@media (prefers-color-scheme: dark) {
+	:root {
+		--main-bg-color: #222;
+		--font-color: #eee;
+	}
+	p {
+		filter: brightness(0.8);
+	}
+}
