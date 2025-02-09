@@ -48,8 +48,8 @@ footer p {
     position: absolute;
     margin: 0;
     padding: 0;
-    bottom: 1.5vmin;
-    right: 1.5vmin;
+    bottom: 2vmin;
+    right: 2vmin;
 }
 
 footer img {
@@ -90,5 +90,13 @@ MEDIA QUERIES
 
     p {
         filter: brightness(0.8);
+    }
+
+    footer img {
+        filter: invert(0.6);
+    }
+
+    footer img:hover {
+        filter: invert(0.8);
     }
 }
