@@ -26,25 +26,73 @@ Data
 ---------------------------------------------------------------------------------------- */
 const words = [
     [
-        "Das Œuvre", "Das Substrat", "Die Rhythmisierung", "Der Pinselduktus", "Der Mythos",
-        "Die Linearität", "Die Komposition", "Die Impression", "Die Idealisierung",
-        "Der Gestus", "Der Farbauftrag", "Die Expression", "Die Atmosphäre", "Die Abstraktion", "Die Ästhetik"
+        "Das Œuvre",
+        "Das Substrat",
+        "Die Rhythmisierung",
+        "Der Pinselduktus",
+        "Der Mythos",
+        "Die Linearität",
+        "Die Komposition",
+        "Die Impression",
+        "Die Idealisierung",
+        "Der Gestus",
+        "Der Farbauftrag",
+        "Die Expression",
+        "Die Atmosphäre",
+        "Die Abstraktion",
+        "Die Ästhetik",
     ],
     [
-        "transzendiert", "collagiert", "illuminiert", "intendiert", "evoziert",
-        "manifestiert", "moduliert", "reflektiert", "suggeriert", "thematisiert",
-        "transformiert", "reproduziert", "verhandelt", "zitiert", "simuliert"
+        "transzendiert",
+        "collagiert",
+        "illuminiert",
+        "intendiert",
+        "evoziert",
+        "manifestiert",
+        "moduliert",
+        "reflektiert",
+        "suggeriert",
+        "thematisiert",
+        "transformiert",
+        "reproduziert",
+        "verhandelt",
+        "zitiert",
+        "simuliert",
     ],
     [
-        "virtuell", "tautologisch", "informell", "surreal", "stringent",
-        "seriell", "mimetisch", "narrativ", "hypothetisch", "haptisch",
-        "fragmentarisch", "hermetisch", "figurativ", "experimentell", "assoziativ"
+        "virtuell",
+        "tautologisch",
+        "informell",
+        "surreal",
+        "stringent",
+        "seriell",
+        "mimetisch",
+        "narrativ",
+        "hypothetisch",
+        "haptisch",
+        "fragmentarisch",
+        "hermetisch",
+        "figurativ",
+        "experimentell",
+        "assoziativ",
     ],
     [
-        "das Artifizielle", "das Auratische", "den Bildraum", "das Eingeschriebene", "das Erratische",
-        "das Existentielle", "die Ikonographie", "das Motivische", "das Orgiastische", "die Materialität",
-        "das Phantastische", "die Relativität", "das Selbstreflexive", "das Kosmische", "die Inszenierung"
-    ]
+        "das Artifizielle",
+        "das Auratische",
+        "den Bildraum",
+        "das Eingeschriebene",
+        "das Erratische",
+        "das Existentielle",
+        "die Ikonographie",
+        "das Motivische",
+        "das Orgiastische",
+        "die Materialität",
+        "das Phantastische",
+        "die Relativität",
+        "das Selbstreflexive",
+        "das Kosmische",
+        "die Inszenierung",
+    ],
 ];
 
 /* ---------------------------------------------------------------------------------------
@@ -55,7 +103,7 @@ function generateSentence() {
     let counter = 1;
 
     // Get random indices for each sub-array in 'words'
-    const indices = words.map(group => getRandomInteger(0, group.length - 1));
+    const indices = words.map((group) => getRandomInteger(0, group.length - 1));
 
     const shuffleParagraphs = () => {
         if (counter >= 10) {
@@ -69,7 +117,8 @@ function generateSentence() {
         paragraphs[0].textContent = shuffleString(words[0][indices[0]]).trim();
         paragraphs[1].textContent = shuffleString(words[1][indices[1]]).trim();
         paragraphs[2].textContent = shuffleString(words[2][indices[2]]).trim();
-        paragraphs[3].textContent = shuffleString(words[3][indices[3]]).trim() + ".";
+        paragraphs[3].textContent = shuffleString(words[3][indices[3]]).trim() +
+            ".";
         counter++;
     };
 
@@ -97,7 +146,7 @@ Public members (exposed in window scope)
 ---------------------------------------------------------------------------------------- */
 window.kunstkritikGenerator = {
     init,
-    generateSentence
+    generateSentence,
 };
 
 window.kunstkritikGenerator.init();
