@@ -18,6 +18,7 @@
         "useTabs": false,
         "singleQuote": false,
         "proseWrap": "always",
-        "semiColons": true
+        "semiColons": true,
+        "include": ["js/"]
     }
 }
