@@ -132,7 +132,7 @@ function init() {
     const text = document.querySelector("div");
 
     // Required to enable touch events on some mobile browsers
-    document.addEventListener("touchstart", () => { }, false);
+    document.addEventListener("touchstart", () => {}, false);
 
     // Generate sentence once DOM is ready
     window.addEventListener("DOMContentLoaded", generateSentence, false);

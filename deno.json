@@ -1,32 +1,23 @@
 {
-  "lint": {
-    "rules": {
-      "tags": ["recommended"],
-      "include": [
-        "no-var",
-        "prefer-const",
-        "eqeqeq",
-        "no-unused-vars",
-        "no-multi-spaces",
-        "no-trailing-spaces",
-        "camelcase",
-        "semi",
-        "curly",
-        "no-debugger",
-        "prefer-arrow-functions"
-      ],
-      "exclude": [
-        "no-window",
-        "no-window-prefix"
-      ]
+    "lint": {
+        "rules": {
+            "tags": ["recommended"],
+            "include": [
+                "eqeqeq",
+                "camelcase"
+            ],
+            "exclude": [
+                "no-window",
+                "no-window-prefix"
+            ]
+        }
+    },
+    "fmt": {
+        "indentWidth": 4,
+        "lineWidth": 80,
+        "useTabs": false,
+        "singleQuote": false,
+        "proseWrap": "always",
+        "semiColons": true
     }
-  },
-  "fmt": {
-    "indentWidth": 4,
-    "lineWidth": 80,
-    "useTabs": false,
-    "singleQuote": false,
-    "include": ["./"],
-    "exclude": []
-  }
 }
